@@ -20,7 +20,6 @@ def test_netflix_login(driver):
     driver.find_element_by_xpath('//button[@type="submit"]').click()
     driver.implicitly_wait(0.5)
     driver.back()
-  # close the browser window
 
 
 def test_netflix_search(driver):
@@ -34,6 +33,8 @@ def test_netflix_search(driver):
     driver.implicitly_wait(0.5)
     driver.find_element_by_xpath('//button[@class="searchTab"]').click()
     driver.implicitly_wait(1.5)
+
+
 
 
 test_netflix_login(start_connection())
