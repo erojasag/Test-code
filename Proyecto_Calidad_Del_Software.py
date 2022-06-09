@@ -33,9 +33,11 @@ def test_netflix_search(driver):
     driver.implicitly_wait(0.5)
     driver.find_element_by_xpath('//button[@class="searchTab"]').click()
     driver.implicitly_wait(1.5)
+    driver.find_element_by_id("searchInput").send_keys("The Matrix")
+    driver.implicitly_wait(1.5)
 
 
 
 
-test_netflix_login(start_connection())
+#test_netflix_login(start_connection())
 test_netflix_search(start_connection())
