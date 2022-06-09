@@ -38,6 +38,15 @@ def test_netflix_search(driver):
     driver.find_element_by_xpath('//button[@class="searchButton"]').click()
     driver.implicitly_wait(1.5)
 
+def test_netflix_logout(driver):
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_link_text(config.profile).click()
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_link_text('Sign Out').click()
+    driver.implicitly_wait(0.5)
+    driver.back()
+
+
 
 
 #test_netflix_login(start_connection())
