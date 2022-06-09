@@ -49,5 +49,5 @@ def test_netflix_logout(driver):
 
 
 
-#test_netflix_login(start_connection())
+test_netflix_login(start_connection())
 test_netflix_search(start_connection())
