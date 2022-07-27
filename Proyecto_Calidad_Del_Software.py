@@ -37,7 +37,6 @@ def test_netflix_user_selection(driver):
     driver.implicitly_wait(0.5)
     test_netflix_logout(driver)
     driver.implicitly_wait(0.5)
-    logging.info()
 
 def test_netflix_search(driver):
     driver.implicitly_wait(0.5)
@@ -50,7 +49,7 @@ def test_netflix_search(driver):
     driver.implicitly_wait(0.5)
     driver.find_element_by_xpath('//button[@class="searchTab"]').click()
     driver.implicitly_wait(1.5)
-    driver.find_element_by_id("searchInput").send_keys("The Matrix")
+    driver.find_element_by_id("searchInput").send_keys("Suits")
     driver.implicitly_wait(1.5)
     driver.find_element_by_xpath('//button[@class="searchButton"]').click()
     driver.implicitly_wait(1.5)
@@ -66,6 +65,6 @@ def test_netflix_logout(driver):
 
 
 
-#test_netflix_login(start_connection())
-#test_netflix_search(start_connection())
+test_netflix_login(start_connection())
+test_netflix_search(start_connection())
 test_netflix_user_selection(start_connection())
