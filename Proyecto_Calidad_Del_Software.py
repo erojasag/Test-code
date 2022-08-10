@@ -16,6 +16,7 @@ def start_connection():
 
 
 
+
 def test_netflix_login(driver):
     driver.implicitly_wait(0.5)
     driver.find_element_by_link_text('Sign In').click()
@@ -25,10 +26,9 @@ def test_netflix_login(driver):
     driver.find_element_by_id('id_password').send_keys(config.password)
     driver.implicitly_wait(0.5)
     driver.find_element_by_xpath('//button[@type="submit"]').click()
-    driver.implicitly_wait(0.5)
+    driver.implicitly_wait(4)
     driver.find_element_by_link_text(config.profile).click()
-    driver.implicitly_wait(0.5)
-    
+    driver.implicitly_wait(5)
 
 def test_netflix_search(driver):
     driver.implicitly_wait(0.5)
@@ -38,7 +38,37 @@ def test_netflix_search(driver):
     driver.implicitly_wait(1.5)
     driver.find_element_by_id("searchInput").send_keys("Suits")
     driver.implicitly_wait(1.5)
-    
+
+def test_netflix_news(driver):
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_link_text('Sign In').click()
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_id('id_userLoginId').send_keys(config.username)
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_id('id_password').send_keys(config.password)
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_xpath('//button[@type="submit"]').click()
+    driver.implicitly_wait(4)
+    driver.find_element_by_link_text(config.profile).click()
+    driver.implicitly_wait(5)
+    driver.find_element_by_link_text('New & Popular').click()
+    driver.implicitly_wait(5)
+
+def test_netflix_profile_creation(driver):
+    driver.implicitly_wait(0.5)
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_link_text('Sign In').click()
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_id('id_userLoginId').send_keys(config.username)
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_id('id_password').send_keys(config.password)
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_xpath('//button[@type="submit"]').click()
+    driver.implicitly_wait(0.5)
+    driver.find_element_by_link_text('Add Profile').click()  
+    driver.implicitly_wait(2)
+    driver.find_element_by_id("add-profile-name").send_keys("Test") 
+    driver.implicitly_wait(2)
 
 def test_netflix_logout(driver):
     driver.implicitly_wait(0.5)
@@ -53,5 +83,7 @@ def test_netflix_logout(driver):
 
 
 test_netflix_login(start_connection())
+test_netflix_news(start_connection())
 test_netflix_search(start_connection())
 test_netflix_logout(start_connection())
+test_netflix_profile_creation(start_connection())
