@@ -22,3 +22,12 @@ La variable service va a albergar la ubicacion de instalacion del web driver.
   
 Por ultimo necesitamos inicializar el driver para poder utilizarlo:
   1- driver = webdriver.Chrome(service=service)
+
+
+Paso para probar el proyecto crear un archivo de python con el nombre 'config'
+Que contenga lo siguiente:
+
+username = '' /* este el correo para realizar el login de la cuenta cada usuario le asigna el valor que desee*/
+password = '' /* esta es contraseña para realizar el login de la cuenta cada usuario le asigna el valor correspondiente a la cuenta*/
+website = 'https://www.netflix.com/cr-en/'
+profile = '' /* En esta parte se le asigna el valor del nombre del perfil de netflix que va estar accediendo*/
