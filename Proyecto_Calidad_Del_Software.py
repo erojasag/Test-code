@@ -36,7 +36,7 @@ def test_netflix_search(driver):
     driver.implicitly_wait(0.5)
     driver.find_element_by_xpath('//button[@class="searchTab"]').click()
     driver.implicitly_wait(1.5)
-    driver.find_element_by_id("searchInput").send_keys("Suits")
+    driver.find_element(By.ID,"searchInput").send_keys("Suits")
     driver.implicitly_wait(1.5)
 
 def test_netflix_news(driver):
@@ -82,8 +82,8 @@ def test_netflix_logout(driver):
 
 
 
-test_netflix_login(start_connection())
-test_netflix_news(start_connection())
+#test_netflix_login(start_connection())
+#test_netflix_news(start_connection())
 test_netflix_search(start_connection())
-test_netflix_logout(start_connection())
-test_netflix_profile_creation(start_connection())
+#test_netflix_logout(start_connection())
+#test_netflix_profile_creation(start_connection())
